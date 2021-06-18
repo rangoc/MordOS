@@ -1,11 +1,7 @@
 import React from 'react';
-
-function App() {
-  return (
-    <div className="App">
-      Hello World
-    </div>
-  );
-}
+import './app.scss';
+const App = () => {
+  return <div className="app">MordOS</div>;
+};
 
 export default App;
