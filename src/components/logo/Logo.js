@@ -5,7 +5,7 @@ import logo from 'assets/logo.png';
 import './logo.scss';
 const Logo = () => {
   return (
-    <div className="logoWrapper">
+    <div className="wrapper">
       <img src={logo} alt="Logo" />
     </div>
   );
