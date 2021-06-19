@@ -1,6 +1,17 @@
 .ui {
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  background: red;
+  background: rgb(129, 44, 2);
+  background: url('/assets/ui-background.svg');
   color: white;
+  .logoWrapper {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
 }

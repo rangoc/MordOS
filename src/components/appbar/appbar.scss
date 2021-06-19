@@ -1,0 +1,30 @@
+.appbar {
+  width: 75px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0.25rem 0.25rem 0;
+  box-shadow: 1px 0 30px rgba(8, 8, 8, 0.7);
+
+  > div {
+    margin-top: 20px;
+    padding: 5px;
+    &:hover {
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+      );
+      border-radius: 0.25rem;
+    }
+    .iconWrapper {
+      width: 50%;
+      margin: auto;
+      cursor: pointer;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
