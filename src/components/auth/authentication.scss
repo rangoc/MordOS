@@ -1,0 +1,98 @@
+$primary-color: rgb(255, 85, 1);
+
+.auth {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(34, 37, 30);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(34, 37, 30, 1) 39%,
+    rgba(20, 20, 18, 1) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(34, 37, 30, 1) 39%,
+    rgba(20, 20, 18, 1) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(34, 37, 30, 1) 39%,
+    rgba(20, 20, 18, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22251e",endColorstr="#141412",GradientType=1);
+
+  .authForm {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+    input {
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .authForm-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      .authForm-subheader {
+        display: flex;
+        align-items: flex-end;
+        .title {
+          font-size: 4.875rem;
+
+          color: $primary-color;
+        }
+        .logoWrapper {
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+      .description {
+        color: white;
+      }
+    }
+
+    .authForm-fields {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      input {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        background: transparent;
+        border-bottom: 1px solid $primary-color;
+        color: white;
+        caret-color: $primary-color;
+      }
+      > :nth-child(1) {
+        margin: 2rem 0;
+      }
+      > :nth-child(2) {
+        margin-bottom: 5rem;
+      }
+      button {
+        width: 50%;
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        background: transparent;
+        border: 1px solid $primary-color;
+        color: white;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all ease-in-out 0.3s;
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}
