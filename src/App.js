@@ -13,16 +13,16 @@ const App = () => {
   const { isAuthenticated } = useContext(AuthContext);
   return (
     <div className="app">
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? (
         <WindowProvider>
           <UserInterface />
         </WindowProvider>
       ) : (
         <Authentication />
-      )}
-      {/* <WindowProvider>
+      )} */}
+      <WindowProvider>
         <UserInterface />
-      </WindowProvider> */}
+      </WindowProvider>
     </div>
   );
 };

@@ -9,6 +9,7 @@
   > div {
     margin-top: 20px;
     padding: 5px;
+    cursor: pointer;
     &:hover {
       background: linear-gradient(
         to right,
@@ -20,7 +21,6 @@
     .iconWrapper {
       width: 50%;
       margin: auto;
-      cursor: pointer;
       img {
         max-width: 100%;
         height: auto;
