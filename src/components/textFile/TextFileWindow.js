@@ -1,26 +1,35 @@
 import React, { useEffect, useContext } from 'react';
+import { TextFileContext } from 'context/TextFileProvider';
 import { WindowContext } from 'context/WindowProvider';
+
+// components
+import HintOverlay from './HintOverlay';
+import SaveModal from './SaveModal';
 // assets
 import cancel from 'assets/cancel.svg';
-import Modal from './Modal';
 
 // sass
 import './textFileWindow.scss';
 const TextFileWindow = () => {
-  const { closeWindow, showModal, setShowModal } = useContext(WindowContext);
-  const { neverShowAgain, show } = showModal;
+  const { closeWindow } = useContext(WindowContext);
+  const {
+    textFiles,
+    handleChangeTextAreaContent,
+    hintOverlay,
+    setHintOverlay,
+    saveModal,
+    openSaveModal,
+  } = useContext(TextFileContext);
 
+  console.log(textFiles);
   useEffect(() => {
-    if (neverShowAgain === false) {
-      setShowModal({ neverShowAgain: false, show: true });
+    if (hintOverlay.neverShowAgain === false) {
+      setHintOverlay({ neverShowAgain: false, show: true });
     } else {
-      setShowModal({ neverShowAgain: true, show: false });
+      setHintOverlay({ neverShowAgain: true, show: false });
     }
-  }, [neverShowAgain, setShowModal]);
+  }, [hintOverlay.neverShowAgain, setHintOverlay]);
 
-  const handleSave = () => {
-    console.log('saving');
-  };
   return (
     <div className="windowWrapper">
       <div className="windowHeader">
@@ -28,11 +37,19 @@ const TextFileWindow = () => {
           <img src={cancel} alt="Cancel" />
         </div>
       </div>
-      <textarea className="text-file" autoFocus={true} disabled={show} />
-      <button type="button" onClick={handleSave}>
+      <textarea
+        className="textFile-content"
+        id="textFile-content"
+        name="textFile-content"
+        autoFocus={true}
+        disabled={hintOverlay.show}
+        onChange={handleChangeTextAreaContent}
+      />
+      <button type="button" onClick={openSaveModal}>
         Save
       </button>
-      {show && <Modal />}
+      {hintOverlay.show && <HintOverlay />}
+      {saveModal.show && <SaveModal />}
     </div>
   );
 };
