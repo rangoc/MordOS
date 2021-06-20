@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 // components
 import AppBar from 'components/appbar/AppBar';
-import Logo from 'components/logo/Logo';
+import Logo from './components/Logo';
 import TextFileWindow from 'components/textFile/TextFileWindow';
+import FileDirectoryWindow from 'components/fileDirectory/FileDirectoryWindow';
 // context
 import { WindowContext } from 'context/WindowProvider';
 
@@ -16,7 +17,10 @@ const UserInterface = () => {
     <div className="ui">
       <AppBar />
       <Logo />
-      <div className="windowArea">{isOpen.textFile && <TextFileWindow />}</div>
+      <div className="windowArea">
+        {isOpen.textFile && <TextFileWindow />}
+        {isOpen.fileDirectory && <FileDirectoryWindow />}
+      </div>
     </div>
   );
 };

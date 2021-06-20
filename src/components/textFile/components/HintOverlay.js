@@ -6,10 +6,10 @@ import fileDirectory from 'assets/fileDirectory.svg';
 
 // sass
 import './hintOverlay.scss';
-const HintOverlay = () => {
+const HintOverlay = ({ zIndex }) => {
   const { setHintOverlay } = useContext(TextFileContext);
   return (
-    <div className="hintOverlay">
+    <div className="hintOverlay" style={{ zIndex: `${zIndex + 1}` }}>
       <p>
         All text files that you <span>save</span> will be placed inside of
       </p>
