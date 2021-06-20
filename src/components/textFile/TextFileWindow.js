@@ -3,17 +3,16 @@ import { TextFileContext } from 'context/TextFileProvider';
 import { WindowContext } from 'context/WindowProvider';
 
 // components
-import HintOverlay from './HintOverlay';
-import SaveModal from './SaveModal';
+import HintOverlay from './components/HintOverlay';
+import SaveModal from './components/SaveModal';
 // assets
 import cancel from 'assets/cancel.svg';
-
+import textFile from 'assets/textFile.svg';
 // sass
 import './textFileWindow.scss';
 const TextFileWindow = () => {
   const { closeWindow } = useContext(WindowContext);
   const {
-    textFiles,
     handleChangeTextAreaContent,
     hintOverlay,
     setHintOverlay,
@@ -21,7 +20,6 @@ const TextFileWindow = () => {
     openSaveModal,
   } = useContext(TextFileContext);
 
-  console.log(textFiles);
   useEffect(() => {
     if (hintOverlay.neverShowAgain === false) {
       setHintOverlay({ neverShowAgain: false, show: true });
@@ -33,7 +31,13 @@ const TextFileWindow = () => {
   return (
     <div className="windowWrapper">
       <div className="windowHeader">
-        <div className="iconWrapper" onClick={() => closeWindow('textFile')}>
+        <div className="appIconWrapper">
+          <img src={textFile} alt="Text File editor" />
+        </div>
+        <div
+          className="closeIconWrapper"
+          onClick={() => closeWindow('textFile')}
+        >
           <img src={cancel} alt="Cancel" />
         </div>
       </div>

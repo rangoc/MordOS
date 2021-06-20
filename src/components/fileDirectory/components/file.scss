@@ -1,0 +1,46 @@
+.file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  transition: all ease-out 0.1s;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .file-options {
+      .dot {
+        background: rgb(255, 85, 1);
+      }
+    }
+  }
+  .file-details {
+    display: flex;
+    align-items: center;
+    .file-icon-wrapper {
+      width: 25px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .file-name {
+      margin-left: 10px;
+    }
+  }
+  .file-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 40px;
+    .dot {
+      width: 5px;
+      height: 5px;
+      background: rgb(133, 133, 133);
+      border-radius: 50%;
+    }
+    > :nth-child(2) {
+      margin: 2px 0;
+    }
+  }
+}
