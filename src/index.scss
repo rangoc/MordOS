@@ -12,6 +12,10 @@ h1 {
 input {
   border: none;
   border-radius: 5px;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 button {

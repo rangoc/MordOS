@@ -12,13 +12,6 @@ $primary-color: rgb(255, 85, 1);
     display: flex;
     flex-direction: column;
     width: 500px;
-
-    input {
-      &:focus {
-        outline: none;
-      }
-    }
-
     .authForm-header {
       display: flex;
       flex-direction: column;

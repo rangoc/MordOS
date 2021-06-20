@@ -5,6 +5,7 @@ import UserInterface from 'components/ui/UserInterface';
 
 // context
 import { WindowProvider } from 'context/WindowProvider';
+import { TextFileProvider } from 'context/TextFileProvider';
 import { AuthContext } from 'context/AuthProvider';
 
 // sass
@@ -13,16 +14,20 @@ const App = () => {
   const { isAuthenticated } = useContext(AuthContext);
   return (
     <div className="app">
-      {/* {isAuthenticated ? (
+      {isAuthenticated ? (
         <WindowProvider>
-          <UserInterface />
+          <TextFileProvider>
+            <UserInterface />
+          </TextFileProvider>
         </WindowProvider>
       ) : (
         <Authentication />
-      )} */}
-      <WindowProvider>
-        <UserInterface />
-      </WindowProvider>
+      )}
+      {/* <WindowProvider>
+        <TextFileProvider>
+          <UserInterface />
+        </TextFileProvider>
+      </WindowProvider> */}
     </div>
   );
 };

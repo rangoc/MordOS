@@ -1,4 +1,4 @@
-.modal {
+.hintOverlay {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   z-index: 1;
-  .modalImgWrapper {
+  .hintOverlayImg-wrapper {
     width: 50px;
     height: 50px;
     margin-top: 20px;
@@ -20,8 +20,11 @@
   }
 
   .buttonContainer {
-    width: 60%;
+    width: 400px;
     display: flex;
     justify-content: space-around;
+    button {
+      width: 150px;
+    }
   }
 }
