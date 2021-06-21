@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 // components
 import AppBar from 'components/appbar/AppBar';
-import Logo from './components/Logo';
+import Logo from './Logo';
 import CreateTextFile from 'components/textFile/CreateTextFile';
 import FileDirectory from 'components/fileDirectory/FileDirectory';
 // context

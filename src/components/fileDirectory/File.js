@@ -16,6 +16,7 @@ const File = ({ file }) => {
           {`.txt`}
         </div>
       </div>
+      <button>Edit</button>
       <div className="file-options">
         <span className="dot"></span>
         <span className="dot"></span>

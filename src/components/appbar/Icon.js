@@ -5,12 +5,12 @@ import { WindowContext } from 'context/WindowProvider';
 
 // sass
 import './icon.scss';
-const Icon = ({ name, asset }) => {
+const Icon = ({ code, asset }) => {
   const { isOpen, openWindow } = useContext(WindowContext);
   return (
     <div
-      className={`${name} ${isOpen[name] ? `active` : ''}`}
-      onClick={() => openWindow(name)}
+      className={`${code} ${isOpen[code] ? `active` : ''}`}
+      onClick={() => openWindow(code)}
     >
       <div className="icon-wrapper">
         <img src={asset} alt="Icon" />

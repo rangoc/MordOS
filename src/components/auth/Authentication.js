@@ -3,11 +3,15 @@ import React, { useContext } from 'react';
 // context
 import { AuthContext } from 'context/AuthProvider';
 
+// constants
+import { validCredentials } from 'constants/validCredentials';
+
 // assets
 import logo from 'assets/logo.png';
 
 // sass
 import './authentication.scss';
+
 const Authentication = () => {
   const { formValues, setIsAuthenticated, handleChange } =
     useContext(AuthContext);
@@ -15,7 +19,10 @@ const Authentication = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (email === 'borgoth@mordos.com' && password === '12bindthem') {
+    if (
+      email === validCredentials.email &&
+      password === validCredentials.password
+    ) {
       setIsAuthenticated(true);
     } else {
       setIsAuthenticated(false);

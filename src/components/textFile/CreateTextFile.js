@@ -1,17 +1,19 @@
 import React, { useEffect, useContext } from 'react';
+// context
 import { TextFileContext } from 'context/TextFileProvider';
-import { WindowContext } from 'context/WindowProvider';
-
 // components
-import HintOverlay from './components/HintOverlay';
-import CreateModal from './components/CreateModal';
+import Window from 'components/Window';
+import HintOverlay from './HintOverlay';
+import CreateModal from './CreateModal';
+
+// constant
+import { appType } from 'constants/appType';
 // assets
-import cancel from 'assets/cancel.svg';
 import textFile from 'assets/textFile.svg';
 // sass
 import './createTextFile.scss';
-const CreateTextFile = () => {
-  const { closeWindow } = useContext(WindowContext);
+
+const CreateTextFile = ({ content = '' }) => {
   const {
     handleChangeTextAreaContent,
     hintOverlay,
@@ -29,32 +31,26 @@ const CreateTextFile = () => {
   }, [hintOverlay.neverShowAgain, setHintOverlay]);
 
   return (
-    <div className="window-wrapper">
-      <div className="window-header">
-        <div className="appIcon-wrapper">
-          <img src={textFile} alt="Text File editor" />
-        </div>
-        <div
-          className="closeIcon-wrapper"
-          onClick={() => closeWindow('textFile')}
-        >
-          <img src={cancel} alt="Cancel" />
-        </div>
-      </div>
+    <Window
+      icon={textFile}
+      code={appType.textFile}
+      customStyle={{ justifyContent: 'space-between' }}
+    >
       <textarea
         className="textFile-content"
         id="textFile-content"
         name="textFile-content"
         autoFocus={true}
         disabled={hintOverlay.show}
+        value={content}
         onChange={handleChangeTextAreaContent}
       />
-      <button type="button" onClick={openCreateModal}>
+      <button className="primaryButton" type="button" onClick={openCreateModal}>
         Create
       </button>
       {hintOverlay.show && <HintOverlay />}
       {createModal.show && <CreateModal />}
-    </div>
+    </Window>
   );
 };
 

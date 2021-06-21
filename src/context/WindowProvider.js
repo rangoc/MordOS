@@ -18,16 +18,16 @@ const WindowProvider = ({ children }) => {
     rssFeed: false,
     webBrowser: false,
   });
-  const openWindow = (name) => {
-    if (isOpen[name] === false) {
-      setIsOpen({ ...isOpen, [name]: true });
+  const openWindow = (code) => {
+    if (isOpen[code] === false) {
+      setIsOpen({ ...isOpen, [code]: true });
     } else {
       // console.log('Already opened');
     }
   };
-  const closeWindow = (name) => {
-    setIsOpen({ ...isOpen, [name]: false });
-    // console.log(`closing ${name}`);
+  const closeWindow = (code) => {
+    setIsOpen({ ...isOpen, [code]: false });
+    // console.log(`closing ${code}`);
   };
   return (
     <WindowContext.Provider
