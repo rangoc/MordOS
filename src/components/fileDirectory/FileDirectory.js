@@ -18,8 +18,11 @@ const FileDirectory = () => {
     <Window icon={fileDirectory} code={appType.fileDirectory}>
       <div className="files-wrapper">
         <div className="files">
-          {textFiles.length > 0 &&
-            textFiles.map((file) => <File key={file.id} file={file} />)}
+          {textFiles.length > 0 ? (
+            textFiles.map((file) => <File key={file.id} file={file} />)
+          ) : (
+            <p className="empty-directory">Directory is currently empty</p>
+          )}
         </div>
       </div>
     </Window>

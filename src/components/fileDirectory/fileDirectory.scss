@@ -1,3 +1,11 @@
 .files-wrapper {
   width: 100%;
+
+  p.empty-directory {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+    color: #6d6d6d;
+  }
 }
