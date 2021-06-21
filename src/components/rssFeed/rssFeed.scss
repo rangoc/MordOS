@@ -1,14 +1,11 @@
-.gallery-wrapper {
+.rssFeed-wrapper {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 150px);
-  grid-gap: 50px;
-  justify-content: center;
+  padding: 0 2rem;
   overflow-y: auto;
   p.empty-directory {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 4rem);
     top: 50%;
     text-align: center;
     color: #6d6d6d;

@@ -29,7 +29,7 @@ const Gallery = () => {
         {photos.length > 0 ? (
           photos.map((photo) => <Photo key={photo.id} photo={photo} />)
         ) : (
-          <p className="empty-directory"></p>
+          <p className="empty-directory">Gallery is empty</p>
         )}
       </div>
     </Window>

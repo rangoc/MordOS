@@ -5,12 +5,13 @@ import Logo from './Logo';
 import CreateTextFile from 'components/textFile/CreateTextFile';
 import FileDirectory from 'components/fileDirectory/FileDirectory';
 import EditTextFile from 'components/textFile/EditTextFile';
+import Gallery from 'components/gallery/Gallery';
+import RssFeed from 'components/rssFeed/RssFeed';
 // context
 import { WindowContext } from 'context/WindowProvider';
 import { TextFileContext } from 'context/TextFileProvider';
 // sass
 import './userInterface.scss';
-import Gallery from 'components/gallery/Gallery';
 
 const UserInterface = () => {
   const { isOpen } = useContext(WindowContext);
@@ -25,6 +26,7 @@ const UserInterface = () => {
         {isOpen.fileDirectory && <FileDirectory />}
         {isOpen.textFile.edit && <EditTextFile file={file} />}
         {isOpen.gallery && <Gallery />}
+        {isOpen.rssFeed && <RssFeed />}
       </div>
     </div>
   );

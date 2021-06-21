@@ -1,0 +1,36 @@
+$primary-color: rgb(255, 85, 1);
+.comment {
+  width: 100%;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &:hover {
+    .title {
+      color: $primary-color;
+
+      .line {
+        background: $primary-color;
+        width: 50%;
+      }
+    }
+    .comment-body {
+      color: $primary-color;
+    }
+  }
+  .title {
+    margin-bottom: 20px;
+    transition: all ease-out 0.3s;
+    .line {
+      width: 0%;
+      height: 5px;
+      background: rgb(83, 83, 83);
+      margin-top: 10px;
+      border-radius: 2rem;
+      transition: all ease-out 0.3s;
+    }
+  }
+  p.comment-body {
+    margin-bottom: 60px;
+    transition: all ease-out 0.3s;
+  }
+}
