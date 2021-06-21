@@ -9,24 +9,24 @@ import { TextFileContext } from 'context/TextFileProvider';
 import cancel from 'assets/cancel.svg';
 import fileDirectory from 'assets/fileDirectory.svg';
 
-import './fileDirectoryWindow.scss';
-const FileDirectoryWindow = () => {
+import './fileDirectory.scss';
+const FileDirectory = () => {
   const { closeWindow } = useContext(WindowContext);
   const { textFiles } = useContext(TextFileContext);
   return (
-    <div className="windowWrapper">
-      <div className="windowHeader">
-        <div className="appIconWrapper">
+    <div className="window-wrapper">
+      <div className="window-header">
+        <div className="appIcon-wrapper">
           <img src={fileDirectory} alt="File Directory" />
         </div>
         <div
-          className="closeIconWrapper"
+          className="closeIcon-wrapper"
           onClick={() => closeWindow('fileDirectory')}
         >
           <img src={cancel} alt="Cancel" />
         </div>
       </div>
-      <div className="filesWrapper">
+      <div className="files-wrapper">
         <div className="files">
           {textFiles.length > 0 &&
             textFiles.map((file) => <File key={file.id} file={file} />)}
@@ -36,4 +36,4 @@ const FileDirectoryWindow = () => {
   );
 };
 
-export default FileDirectoryWindow;
+export default FileDirectory;
