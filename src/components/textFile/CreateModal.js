@@ -41,7 +41,7 @@ const CreateModal = () => {
             value={textFileName}
             onChange={handleChangeCreateModal}
           />
-          <button className="primaryButton" type="submit">
+          <button className="primary-button" type="submit">
             Done
           </button>
         </form>

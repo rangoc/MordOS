@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding-left: 15px;
   transition: all ease-out 0.1s;
+  cursor: pointer;
   &:hover {
     background-color: rgba(0, 0, 0, 0.3);
 
@@ -29,9 +30,9 @@
   }
   .file-options {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
     width: 40px;
     .dot {
       width: 5px;
@@ -41,6 +42,33 @@
     }
     > :nth-child(2) {
       margin: 2px 0;
+    }
+    .options-menu {
+      position: absolute;
+      width: 80px;
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      top: 30px;
+      left: -57px;
+      opacity: 0;
+      background: rgb(94, 94, 94);
+      border-radius: 0.25rem;
+      z-index: 2;
+      cursor: pointer;
+      transition: all ease-out 0.3s;
+      > div {
+        width: 100%;
+        text-align: center;
+        &:hover {
+          color: rgb(255, 85, 1);
+        }
+      }
+    }
+    .options-menu.active {
+      opacity: 1;
     }
   }
 }

@@ -7,6 +7,9 @@ const TextFileProvider = ({ children }) => {
   // state needed for file directory
   const [textFiles, setTextFiles] = useState([]); // here all text files will be placed
 
+  // state needed for editing a file
+  const [file, setFile] = useState({});
+
   // text area state
   const [textAreaContent, setTextAreaContent] = useState('');
 
@@ -48,6 +51,7 @@ const TextFileProvider = ({ children }) => {
         name: e.target[0].value || 'untitled',
         content: textFileContent,
         createdAt: Date(),
+        modifiedAt: Date(),
       },
     ]);
     closeCreateModal();
@@ -55,16 +59,19 @@ const TextFileProvider = ({ children }) => {
   return (
     <TextFileContext.Provider
       value={{
+        file,
         textFiles,
         textAreaContent,
         hintOverlay,
         createModal,
         handleChangeTextAreaContent,
         setHintOverlay,
+        setTextFiles,
         openCreateModal,
         closeCreateModal,
         handleChangeCreateModal,
         handleSubmitCreateModal,
+        setFile,
       }}
     >
       {children}
