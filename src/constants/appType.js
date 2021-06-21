@@ -1,3 +1,8 @@
+export const appMode = {
+  create: 'create',
+  edit: 'edit',
+};
+
 export const appType = {
   textFile: 'textFile',
   fileDirectory: 'fileDirectory',

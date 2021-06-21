@@ -7,13 +7,13 @@ import HintOverlay from './HintOverlay';
 import CreateModal from './CreateModal';
 
 // constant
-import { appType } from 'constants/appType';
+import { appMode, appType } from 'constants/appType';
 // assets
 import textFile from 'assets/textFile.svg';
 // sass
 import './createTextFile.scss';
 
-const CreateTextFile = ({ content = '' }) => {
+const CreateTextFile = () => {
   const {
     handleChangeTextAreaContent,
     hintOverlay,
@@ -35,6 +35,7 @@ const CreateTextFile = ({ content = '' }) => {
       icon={textFile}
       code={appType.textFile}
       customStyle={{ justifyContent: 'space-between' }}
+      mode={appMode.create}
     >
       <textarea
         className="textFile-content"
@@ -42,10 +43,13 @@ const CreateTextFile = ({ content = '' }) => {
         name="textFile-content"
         autoFocus={true}
         disabled={hintOverlay.show}
-        value={content}
         onChange={handleChangeTextAreaContent}
       />
-      <button className="primaryButton" type="button" onClick={openCreateModal}>
+      <button
+        className="primary-button"
+        type="button"
+        onClick={openCreateModal}
+      >
         Create
       </button>
       {hintOverlay.show && <HintOverlay />}

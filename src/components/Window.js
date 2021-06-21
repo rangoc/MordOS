@@ -7,7 +7,7 @@ import cancel from 'assets/cancel.svg';
 
 // sass
 import './window.scss';
-const Window = ({ icon, code, children, customStyle = {} }) => {
+const Window = ({ icon, code, mode = null, children, customStyle = {} }) => {
   const { closeWindow } = useContext(WindowContext);
   return (
     <div className="window-wrapper" style={customStyle}>
@@ -15,7 +15,10 @@ const Window = ({ icon, code, children, customStyle = {} }) => {
         <div className="appIcon-wrapper">
           <img src={icon} alt={`${code}`} />
         </div>
-        <div className="closeIcon-wrapper" onClick={() => closeWindow(code)}>
+        <div
+          className="closeIcon-wrapper"
+          onClick={() => closeWindow(code, mode)}
+        >
           <img src={cancel} alt="Cancel" />
         </div>
       </div>

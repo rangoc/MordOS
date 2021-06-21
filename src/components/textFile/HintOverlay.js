@@ -6,7 +6,7 @@ import fileDirectory from 'assets/fileDirectory.svg';
 
 // sass
 import './hintOverlay.scss';
-const HintOverlay = ({ zIndex }) => {
+const HintOverlay = () => {
   const { setHintOverlay } = useContext(TextFileContext);
   return (
     <div className="hintOverlay">
@@ -19,11 +19,13 @@ const HintOverlay = ({ zIndex }) => {
       <div className="button-container">
         <button
           type="button"
+          className="primary-button"
           onClick={() => setHintOverlay({ show: false, neverShowAgain: false })}
         >
           Got it!
         </button>
         <button
+          className="primary-button"
           type="button"
           onClick={() => setHintOverlay({ show: false, neverShowAgain: true })}
         >
