@@ -51,9 +51,10 @@
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      top: 30px;
+      top: 20px;
       left: -57px;
       opacity: 0;
+      visibility: hidden;
       background: rgb(94, 94, 94);
       border-radius: 0.25rem;
       z-index: 2;
@@ -69,6 +70,7 @@
     }
     .options-menu.active {
       opacity: 1;
+      visibility: visible;
     }
   }
 }

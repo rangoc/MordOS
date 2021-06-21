@@ -4,12 +4,12 @@ import AppBar from 'components/appbar/AppBar';
 import Logo from './Logo';
 import CreateTextFile from 'components/textFile/CreateTextFile';
 import FileDirectory from 'components/fileDirectory/FileDirectory';
+import EditTextFile from 'components/textFile/EditTextFile';
 // context
 import { WindowContext } from 'context/WindowProvider';
 import { TextFileContext } from 'context/TextFileProvider';
 // sass
 import './userInterface.scss';
-import EditTextFile from 'components/textFile/EditTextFile';
 
 const UserInterface = () => {
   const { isOpen } = useContext(WindowContext);
