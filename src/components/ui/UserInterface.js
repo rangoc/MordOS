@@ -10,6 +10,7 @@ import { WindowContext } from 'context/WindowProvider';
 import { TextFileContext } from 'context/TextFileProvider';
 // sass
 import './userInterface.scss';
+import Gallery from 'components/gallery/Gallery';
 
 const UserInterface = () => {
   const { isOpen } = useContext(WindowContext);
@@ -23,6 +24,7 @@ const UserInterface = () => {
         {isOpen.textFile.create && <CreateTextFile />}
         {isOpen.fileDirectory && <FileDirectory />}
         {isOpen.textFile.edit && <EditTextFile file={file} />}
+        {isOpen.gallery && <Gallery />}
       </div>
     </div>
   );

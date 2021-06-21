@@ -15,7 +15,11 @@ import './fileDirectory.scss';
 const FileDirectory = () => {
   const { textFiles } = useContext(TextFileContext);
   return (
-    <Window icon={fileDirectory} code={appType.fileDirectory}>
+    <Window
+      icon={fileDirectory}
+      code={appType.fileDirectory}
+      customStyle={{ alignItems: 'center' }}
+    >
       <div className="files-wrapper">
         <div className="files">
           {textFiles.length > 0 ? (

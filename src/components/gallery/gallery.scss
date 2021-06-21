@@ -1,0 +1,9 @@
+.gallery-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-gap: 50px;
+  justify-content: center;
+  overflow-y: auto;
+}
