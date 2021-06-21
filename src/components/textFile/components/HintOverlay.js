@@ -9,14 +9,14 @@ import './hintOverlay.scss';
 const HintOverlay = ({ zIndex }) => {
   const { setHintOverlay } = useContext(TextFileContext);
   return (
-    <div className="hintOverlay" style={{ zIndex: `${zIndex + 1}` }}>
+    <div className="hintOverlay">
       <p>
         All text files that you <span>save</span> will be placed inside of
       </p>
       <div className="hintOverlayImg-wrapper">
         <img src={fileDirectory} alt="File Directory" />
       </div>
-      <div className="buttonContainer">
+      <div className="button-container">
         <button
           type="button"
           onClick={() => setHintOverlay({ show: false, neverShowAgain: false })}

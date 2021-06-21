@@ -12,7 +12,7 @@ const Icon = ({ name, asset }) => {
       className={`${name} ${isOpen[name] ? `active` : ''}`}
       onClick={() => openWindow(name)}
     >
-      <div className="iconWrapper">
+      <div className="icon-wrapper">
         <img src={asset} alt="Icon" />
       </div>
     </div>

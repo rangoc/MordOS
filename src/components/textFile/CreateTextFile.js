@@ -4,20 +4,20 @@ import { WindowContext } from 'context/WindowProvider';
 
 // components
 import HintOverlay from './components/HintOverlay';
-import SaveModal from './components/SaveModal';
+import CreateModal from './components/CreateModal';
 // assets
 import cancel from 'assets/cancel.svg';
 import textFile from 'assets/textFile.svg';
 // sass
-import './textFileWindow.scss';
-const TextFileWindow = () => {
+import './createTextFile.scss';
+const CreateTextFile = () => {
   const { closeWindow } = useContext(WindowContext);
   const {
     handleChangeTextAreaContent,
     hintOverlay,
     setHintOverlay,
-    saveModal,
-    openSaveModal,
+    createModal,
+    openCreateModal,
   } = useContext(TextFileContext);
 
   useEffect(() => {
@@ -29,13 +29,13 @@ const TextFileWindow = () => {
   }, [hintOverlay.neverShowAgain, setHintOverlay]);
 
   return (
-    <div className="windowWrapper">
-      <div className="windowHeader">
-        <div className="appIconWrapper">
+    <div className="window-wrapper">
+      <div className="window-header">
+        <div className="appIcon-wrapper">
           <img src={textFile} alt="Text File editor" />
         </div>
         <div
-          className="closeIconWrapper"
+          className="closeIcon-wrapper"
           onClick={() => closeWindow('textFile')}
         >
           <img src={cancel} alt="Cancel" />
@@ -49,13 +49,13 @@ const TextFileWindow = () => {
         disabled={hintOverlay.show}
         onChange={handleChangeTextAreaContent}
       />
-      <button type="button" onClick={openSaveModal}>
-        Save
+      <button type="button" onClick={openCreateModal}>
+        Create
       </button>
       {hintOverlay.show && <HintOverlay />}
-      {saveModal.show && <SaveModal />}
+      {createModal.show && <CreateModal />}
     </div>
   );
 };
 
-export default TextFileWindow;
+export default CreateTextFile;

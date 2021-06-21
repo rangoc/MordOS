@@ -1,5 +1,6 @@
 import React, { useState, createContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+
 const TextFileContext = createContext();
 
 const TextFileProvider = ({ children }) => {
@@ -18,37 +19,38 @@ const TextFileProvider = ({ children }) => {
     neverShowAgain: false,
   });
 
-  // text file save modal
-  const [saveModal, setSaveModal] = useState({
+  // text file create modal
+  const [createModal, setCreateModal] = useState({
     show: false,
     textFileName: '',
   });
 
-  const openSaveModal = () => {
-    setSaveModal({ show: true, textFileName: '' });
+  const openCreateModal = () => {
+    setCreateModal({ show: true, textFileName: '' });
     // console.log('Opening Save Modal');
   };
-  const closeSaveModal = () => {
-    setSaveModal({ show: false, textFileName: '' });
+  const closeCreateModal = () => {
+    setCreateModal({ show: false, textFileName: '' });
     // console.log('Closing Save Modal');
   };
 
-  const handleChangeSaveModal = (e) => {
-    setSaveModal({ ...saveModal, textFileName: e.target.value });
+  const handleChangeCreateModal = (e) => {
+    setCreateModal({ ...createModal, textFileName: e.target.value });
   };
 
-  const handleSubmitSaveModal = async (e, textFileContent) => {
+  // generating a text file that will be placed inside a File Directory component
+  const handleSubmitCreateModal = async (e, textFileContent) => {
     e.preventDefault();
     setTextFiles([
       ...textFiles,
       {
         id: uuidv4(),
-        name: e.target[0].value,
+        name: e.target[0].value || 'untitled',
         content: textFileContent,
         createdAt: Date(),
       },
     ]);
-    closeSaveModal();
+    closeCreateModal();
   };
   return (
     <TextFileContext.Provider
@@ -56,13 +58,13 @@ const TextFileProvider = ({ children }) => {
         textFiles,
         textAreaContent,
         hintOverlay,
-        saveModal,
+        createModal,
         handleChangeTextAreaContent,
         setHintOverlay,
-        openSaveModal,
-        closeSaveModal,
-        handleChangeSaveModal,
-        handleSubmitSaveModal,
+        openCreateModal,
+        closeCreateModal,
+        handleChangeCreateModal,
+        handleSubmitCreateModal,
       }}
     >
       {children}

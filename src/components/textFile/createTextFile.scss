@@ -1,5 +1,5 @@
 $primary-color: rgb(255, 85, 1);
-.windowWrapper {
+.window-wrapper {
   position: absolute;
   height: 500px;
   min-height: 500px;
@@ -16,7 +16,7 @@ $primary-color: rgb(255, 85, 1);
   overflow: auto;
   z-index: 1;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-  .windowHeader {
+  .window-header {
     height: 40px;
     width: 100%;
     display: flex;
@@ -41,7 +41,7 @@ $primary-color: rgb(255, 85, 1);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9c1f95",endColorstr="#630263",GradientType=1);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.6);
 
-    .closeIconWrapper {
+    .closeIcon-wrapper {
       width: 40px;
       height: 100%;
       display: flex;
@@ -61,7 +61,7 @@ $primary-color: rgb(255, 85, 1);
         height: auto;
       }
     }
-    .appIconWrapper {
+    .appIcon-wrapper {
       width: 40px;
       height: 100%;
       display: flex;
