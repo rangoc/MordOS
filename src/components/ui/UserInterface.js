@@ -8,6 +8,7 @@ import EditTextFile from 'components/textFile/EditTextFile';
 import Gallery from 'components/gallery/Gallery';
 import RssFeed from 'components/rssFeed/RssFeed';
 import Webcam from 'components/webcam/Webcam';
+import WebBrowser from 'components/webBrowser/WebBrowser';
 // context
 import { WindowContext } from 'context/WindowProvider';
 import { TextFileContext } from 'context/TextFileProvider';
@@ -29,6 +30,7 @@ const UserInterface = () => {
         {isOpen.gallery && <Gallery />}
         {isOpen.rssFeed && <RssFeed />}
         {isOpen.webcam && <Webcam />}
+        {isOpen.webBrowser && <WebBrowser />}
       </div>
     </div>
   );
