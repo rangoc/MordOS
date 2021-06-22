@@ -1,5 +1,11 @@
+@import '../../includeMedia.scss';
+
 $primary-color: rgb(255, 85, 1);
 
+$breakpoints: (
+  phone: 320px,
+  customSize: 520px,
+);
 .auth {
   width: 100%;
   min-height: 100vh;
@@ -12,6 +18,9 @@ $primary-color: rgb(255, 85, 1);
     display: flex;
     flex-direction: column;
     width: 500px;
+    @include media('>=phone', '<=customSize') {
+      align-items: center;
+    }
     .authForm-header {
       display: flex;
       flex-direction: column;
@@ -19,6 +28,10 @@ $primary-color: rgb(255, 85, 1);
       .authForm-subheader {
         display: flex;
         align-items: flex-end;
+        @include media('>=phone', '<=customSize') {
+          flex-direction: column-reverse;
+          align-items: center;
+        }
         .title {
           font-size: 4.875rem;
 
@@ -26,6 +39,10 @@ $primary-color: rgb(255, 85, 1);
         }
         .logoWrapper {
           width: 100%;
+          @include media('>=phone', '<=customSize') {
+            display: flex;
+            justify-content: center;
+          }
           img {
             max-width: 100%;
             height: auto;
@@ -35,6 +52,9 @@ $primary-color: rgb(255, 85, 1);
       }
       .description {
         color: white;
+        @include media('>=phone', '<=customSize') {
+          text-align: center;
+        }
       }
     }
 
@@ -43,6 +63,9 @@ $primary-color: rgb(255, 85, 1);
       width: 100%;
       flex-direction: column;
       align-items: center;
+      @include media('>=phone', '<=customSize') {
+        width: 90%;
+      }
       input {
         width: 100%;
         padding: 1rem 2rem;

@@ -1,3 +1,10 @@
+@import '../../includeMedia.scss';
+
+$breakpoints: (
+  phone: 320px,
+  customSize: 400px,
+);
+
 .hintOverlay-wrapper {
   position: absolute;
   display: flex;
@@ -18,11 +25,16 @@
       height: auto;
     }
   }
-
+  .hintOverlay-description {
+    text-align: center;
+  }
   .button-container {
     width: 400px;
     display: flex;
     justify-content: space-around;
+    @include media('>=phone', '<=customSize') {
+      width: 320px;
+    }
     button {
       width: 150px;
     }

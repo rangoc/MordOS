@@ -10,7 +10,7 @@ const HintOverlay = () => {
   const { setHintOverlay } = useContext(TextFileContext);
   return (
     <div className="hintOverlay-wrapper">
-      <p>
+      <p className="hintOverlay-description">
         All text files that you <span>save</span> will be placed inside of
       </p>
       <div className="hintOverlayImg-wrapper">
