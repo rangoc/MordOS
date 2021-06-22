@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 // components
 import AppBar from 'components/appbar/AppBar';
 import Logo from './Logo';
@@ -19,6 +19,13 @@ const UserInterface = () => {
   const { isOpen } = useContext(WindowContext);
   const { file } = useContext(TextFileContext);
 
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   return (
     <div className="ui">
       <AppBar />
