@@ -17,11 +17,15 @@ const Gallery = () => {
   }, []);
 
   const fetchPhotos = async () => {
-    const fetchResponse = await fetch(
-      'https://jsonplaceholder.typicode.com/photos/?_limit=30'
-    );
-    const response = await fetchResponse.json();
-    setPhotos(response);
+    try {
+      const fetchResponse = await fetch(
+        'https://jsonplaceholder.typicode.com/photos/?_limit=30'
+      );
+      const response = await fetchResponse.json();
+      setPhotos(response);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <Window icon={gallery} code={appType.gallery}>

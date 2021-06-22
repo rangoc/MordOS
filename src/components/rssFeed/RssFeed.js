@@ -17,11 +17,15 @@ const RssFeed = () => {
   }, []);
 
   const fetchComments = async () => {
-    const fetchResponse = await fetch(
-      'https://jsonplaceholder.typicode.com/comments/?_limit=30'
-    );
-    const response = await fetchResponse.json();
-    setComments(response);
+    try {
+      const fetchResponse = await fetch(
+        'https://jsonplaceholder.typicode.com/comments/?_limit=30'
+      );
+      const response = await fetchResponse.json();
+      setComments(response);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <Window icon={rssFeed} code={appType.rssFeed}>
