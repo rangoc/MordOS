@@ -1,3 +1,11 @@
+@import '../../includeMedia.scss';
+
+$breakpoints: (
+  phone: 320px,
+  customSize: 550px,
+  tablet: 840px,
+);
+
 .appbar {
   width: 75px;
   min-height: 100vh;
@@ -5,11 +13,25 @@
   flex-direction: column;
   border-radius: 0 0.25rem 0.25rem 0;
   box-shadow: 1px 0 30px rgba(8, 8, 8, 0.7);
-
+  @include media('>=phone', '<=tablet') {
+    flex-direction: row;
+    width: 100%;
+    height: 75px;
+    min-height: 75px;
+  }
+  @include media('>=phone', '<=400px') {
+    height: 50px;
+    min-height: 50px;
+  }
   > div {
     margin-top: 20px;
     padding: 5px;
     cursor: pointer;
+    @include media('>=phone', '<=tablet') {
+      display: flex;
+      justify-content: center;
+      margin: 0 5px;
+    }
     &:hover {
       background: linear-gradient(
         to right,
@@ -21,6 +43,10 @@
     .icon-wrapper {
       width: 50%;
       margin: auto;
+      @include media('>=phone', '<=customSize') {
+        width: 80%;
+        margin: auto 0;
+      }
       img {
         max-width: 100%;
         height: auto;

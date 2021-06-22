@@ -1,3 +1,10 @@
+@import '../includeMedia.scss';
+
+$breakpoints: (
+  phone: 320px,
+  customSize: 535px,
+);
+
 .window-wrapper {
   position: absolute;
   height: 500px;
@@ -13,6 +20,13 @@
   overflow: auto;
   z-index: 1;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  @include media('>=phone', '<=customSize') {
+    height: 320px;
+    min-height: 320px;
+    max-height: 80%;
+    min-width: 320px;
+    max-width: 90%;
+  }
   .window-header {
     height: 40px;
     width: 100%;
