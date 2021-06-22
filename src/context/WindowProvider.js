@@ -21,7 +21,6 @@ const WindowProvider = ({ children }) => {
     rssFeed: false,
     webBrowser: false,
   });
-  const [highestZIndex, setHighestZIndex] = useState(1);
   const openWindow = (code, mode = null) => {
     if (code === appType.textFile) {
       if (!isOpen[code][mode]) {
@@ -50,9 +49,7 @@ const WindowProvider = ({ children }) => {
     <WindowContext.Provider
       value={{
         isOpen,
-        highestZIndex,
         openWindow,
-        setHighestZIndex,
         closeWindow,
       }}
     >

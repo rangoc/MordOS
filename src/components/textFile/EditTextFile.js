@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 
 // components
 import Window from 'components/Window';
@@ -13,7 +13,12 @@ const EditTextFile = ({ file }) => {
   const { closeWindow } = useContext(WindowContext);
   const { textFiles, setTextFiles } = useContext(TextFileContext);
   const [textAreaContent, setTextAreaContent] = useState(file.content);
+  const textAreaRef = useRef();
 
+  // setting the cursor at the end of value inside of textarea
+  useEffect(() => {
+    textAreaRef.current.selectionStart = textAreaRef.current.value.length;
+  }, []);
   const handleChangeTextAreaContent = (e) => {
     setTextAreaContent(e.target.value);
   };
@@ -34,6 +39,7 @@ const EditTextFile = ({ file }) => {
       customStyle={{ justifyContent: 'space-between' }}
     >
       <textarea
+        ref={textAreaRef}
         className="textFile-content"
         id="textFile-content"
         name="textFile-content"

@@ -6,6 +6,7 @@
   grid-gap: 50px;
   justify-content: center;
   overflow-y: auto;
+  user-select: none;
   p.empty-directory {
     position: absolute;
     width: 100%;

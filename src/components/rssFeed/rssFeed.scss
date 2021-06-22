@@ -3,6 +3,7 @@
   height: 100%;
   padding: 0 2rem;
   overflow-y: auto;
+  user-select: none;
   p.empty-directory {
     position: absolute;
     width: calc(100% - 4rem);
