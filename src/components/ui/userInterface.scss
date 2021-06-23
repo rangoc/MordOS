@@ -22,5 +22,6 @@ $primary-color: rgb(255, 85, 1);
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 // assets
-import logo from 'assets/logo.png';
+import logo from 'assets/logo.svg';
 // sass
 import './logo.scss';
 const Logo = () => {

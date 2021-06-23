@@ -2,7 +2,7 @@
 
 $breakpoints: (
   phone: 320px,
-  customSize: 400px,
+  customSize: 880px,
 );
 
 .hintOverlay-wrapper {
@@ -26,6 +26,7 @@ $breakpoints: (
     }
   }
   .hintOverlay-description {
+    padding: 0 5px;
     text-align: center;
   }
   .button-container {
@@ -37,6 +38,9 @@ $breakpoints: (
     }
     button {
       width: 150px;
+      @include media('>=phone', '<=customSize') {
+        width: 100px;
+      }
     }
   }
 }

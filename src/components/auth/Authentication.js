@@ -7,7 +7,7 @@ import { AuthContext } from 'context/AuthProvider';
 import { validCredentials } from 'constants/validCredentials';
 
 // assets
-import logo from 'assets/logo.png';
+import logo from 'assets/logo.svg';
 
 // sass
 import './authentication.scss';

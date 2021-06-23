@@ -48,7 +48,7 @@ $breakpoints: (
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9c1f95",endColorstr="#630263",GradientType=1);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.6);
-
+    user-select: none;
     .closeIcon-wrapper {
       width: 40px;
       height: 100%;

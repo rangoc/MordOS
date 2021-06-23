@@ -13,6 +13,7 @@ $breakpoints: (
   flex-direction: column;
   border-radius: 0 0.25rem 0.25rem 0;
   box-shadow: 1px 0 30px rgba(8, 8, 8, 0.7);
+  user-select: none;
   @include media('>=phone', '<=tablet') {
     flex-direction: row;
     width: 100%;

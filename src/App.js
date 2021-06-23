@@ -23,11 +23,6 @@ const App = () => {
       ) : (
         <Authentication />
       )}
-      {/* <WindowProvider>
-        <TextFileProvider>
-          <UserInterface />
-        </TextFileProvider>
-      </WindowProvider> */}
     </div>
   );
 };
