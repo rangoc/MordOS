@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // components
 import Window from 'components/Window';
-import Photo from './Photo';
+import Photo from '../Photo/Photo';
 // assets
 import gallery from 'assets/gallery.svg';
 import { appType } from 'constants/appType';

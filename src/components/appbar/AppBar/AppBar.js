@@ -1,6 +1,6 @@
 import React from 'react';
 // components
-import Icon from './Icon';
+import Icon from '../Icon/Icon';
 
 // assets
 import fileDirectory from 'assets/fileDirectory.svg';
