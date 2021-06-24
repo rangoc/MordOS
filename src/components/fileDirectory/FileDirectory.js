@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 // components
 import Window from 'components/Window';
-import File from '../File/File';
+import File from './File';
 // context
 import { TextFileContext } from 'context/TextFileProvider';
 

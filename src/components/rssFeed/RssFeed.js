@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // components
 import Window from 'components/Window';
-import Comment from '../Comment/Comment';
+import Comment from './Comment';
 // assets
 import rssFeed from 'assets/rssFeed.svg';
 import { appType } from 'constants/appType';

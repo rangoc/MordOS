@@ -50,8 +50,8 @@ const TextFileProvider = ({ children }) => {
         id: uuidv4(),
         name: e.target[0].value || 'untitled',
         content: textFileContent,
-        createdAt: new Date(),
-        modifiedAt: new Date(),
+        createdAt: Date(),
+        modifiedAt: Date(),
       },
     ]);
     closeCreateModal();

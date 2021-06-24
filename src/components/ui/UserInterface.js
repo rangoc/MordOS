@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 // components
-import AppBar from 'components/appbar/AppBar/AppBar';
-import Logo from '../Logo/Logo';
-import CreateTextFile from 'components/textFile/CreateTextFile/CreateTextFile';
-import FileDirectory from 'components/fileDirectory/FileDirectory/FileDirectory';
-import EditTextFile from 'components/textFile/EditTextFile/EditTextFile';
-import Gallery from 'components/gallery/Gallery/Gallery';
-import RssFeed from 'components/rssFeed/RssFeed/RssFeed';
+import AppBar from 'components/appbar/AppBar';
+import Logo from './Logo';
+import CreateTextFile from 'components/textFile/CreateTextFile';
+import FileDirectory from 'components/fileDirectory/FileDirectory';
+import EditTextFile from 'components/textFile/EditTextFile';
+import Gallery from 'components/gallery/Gallery';
+import RssFeed from 'components/rssFeed/RssFeed';
 import Webcam from 'components/webcam/Webcam';
 import WebBrowser from 'components/webBrowser/WebBrowser';
 // context
@@ -35,8 +35,8 @@ const UserInterface = () => {
         {isOpen.fileDirectory && <FileDirectory />}
         {isOpen.textFile.edit && <EditTextFile file={file} />}
         {isOpen.gallery && <Gallery />}
-        {isOpen.webcam && <Webcam />}
         {isOpen.rssFeed && <RssFeed />}
+        {isOpen.webcam && <Webcam />}
         {isOpen.webBrowser && <WebBrowser />}
       </div>
     </div>
