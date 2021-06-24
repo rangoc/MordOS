@@ -11,7 +11,9 @@ const AuthProvider = ({ children }) => {
     email: '',
     password: '',
   });
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    () => !!localStorage.getItem('user')
+  );
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
