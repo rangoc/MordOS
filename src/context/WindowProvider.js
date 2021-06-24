@@ -1,5 +1,4 @@
 import React, { useState, createContext } from 'react';
-
 // constants
 import { appType } from 'constants/appType';
 
