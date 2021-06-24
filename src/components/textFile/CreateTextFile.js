@@ -3,8 +3,8 @@ import React, { useEffect, useContext } from 'react';
 import { TextFileContext } from 'context/TextFileProvider';
 // components
 import Window from 'components/Window';
-import HintOverlay from '../HintOverlay/HintOverlay';
-import CreateModal from '../CreateModal/CreateModal';
+import HintOverlay from './HintOverlay';
+import CreateModal from './CreateModal';
 
 // constant
 import { appMode, appType } from 'constants/appType';

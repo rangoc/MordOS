@@ -7,15 +7,11 @@ const AuthContext = createContext({
 });
 
 const AuthProvider = ({ children }) => {
-  const [formValues, setFormValues] = useState(
-    localStorage.getItem('user') || {
-      email: '',
-      password: '',
-    }
-  );
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    () => !!localStorage.getItem('user')
-  );
+  const [formValues, setFormValues] = useState({
+    email: '',
+    password: '',
+  });
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };

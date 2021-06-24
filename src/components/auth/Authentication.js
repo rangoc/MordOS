@@ -24,7 +24,6 @@ const Authentication = () => {
       password === validCredentials.password
     ) {
       setIsAuthenticated(true);
-      localStorage.setItem('user', JSON.stringify(formValues));
     } else {
       setIsAuthenticated(false);
       console.log('Invalid credentials');
