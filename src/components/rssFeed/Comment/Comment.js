@@ -1,5 +1,4 @@
 import React from 'react';
-
 // sass
 import './comment.scss';
 const Comment = ({ comment }) => {

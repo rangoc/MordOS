@@ -5,7 +5,11 @@ const TextFileContext = createContext();
 
 const TextFileProvider = ({ children }) => {
   // state needed for file directory
-  const [textFiles, setTextFiles] = useState([]); // here all text files will be placed
+  const [textFiles, setTextFiles] = useState({
+    sort: '',
+    order: '',
+    files: [],
+  }); // here all text files will be placed
 
   // state needed for editing a file
   const [file, setFile] = useState({});
@@ -44,16 +48,18 @@ const TextFileProvider = ({ children }) => {
   // generating a text file that will be placed inside a File Directory component
   const handleSubmitCreateModal = async (e, textFileContent) => {
     e.preventDefault();
-    setTextFiles([
+    setTextFiles({
       ...textFiles,
-      {
-        id: uuidv4(),
-        name: e.target[0].value || 'untitled',
-        content: textFileContent,
-        createdAt: new Date(),
-        modifiedAt: new Date(),
-      },
-    ]);
+      files: [
+        ...textFiles.files,
+        {
+          id: uuidv4(),
+          name: e.target[0].value || 'untitled',
+          content: textFileContent,
+          createdAt: new Date(),
+        },
+      ],
+    });
     closeCreateModal();
   };
   return (
