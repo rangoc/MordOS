@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
+
 // components
 import Window from 'components/Window';
 import { appMode, appType } from 'constants/appType';
@@ -7,10 +8,10 @@ import { TextFileContext } from 'context/TextFileProvider';
 import { WindowContext } from 'context/WindowProvider';
 // assets
 import textFile from 'assets/textFile.svg';
+
 const EditTextFile = ({ file }) => {
   const { closeWindow } = useContext(WindowContext);
   const { textFiles, setTextFiles } = useContext(TextFileContext);
-  const { files } = textFiles;
   const [textAreaContent, setTextAreaContent] = useState(file.content);
   const textAreaRef = useRef();
 
@@ -22,10 +23,12 @@ const EditTextFile = ({ file }) => {
     setTextAreaContent(e.target.value);
   };
   const updateTextFiles = (fileElement) => {
-    const updatedFiles = files.map((f) =>
-      f.id === fileElement.id ? { ...fileElement, content: textAreaContent } : f
+    const updatedFiles = textFiles.map((f) =>
+      f.id === fileElement.id
+        ? { ...fileElement, content: textAreaContent, modifiedAt: Date() }
+        : f
     );
-    setTextFiles({ ...textFiles, files: [...updatedFiles] });
+    setTextFiles(updatedFiles);
     closeWindow(appType.textFile, appMode.edit);
   };
   return (
@@ -49,7 +52,7 @@ const EditTextFile = ({ file }) => {
         type="button"
         onClick={() => updateTextFiles(file)}
       >
-        Save
+        Update
       </button>
     </Window>
   );

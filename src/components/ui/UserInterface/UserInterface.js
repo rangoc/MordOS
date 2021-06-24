@@ -14,6 +14,7 @@ import { WindowContext } from 'context/WindowProvider';
 import { TextFileContext } from 'context/TextFileProvider';
 // sass
 import './userInterface.scss';
+
 const UserInterface = () => {
   const { isOpen } = useContext(WindowContext);
   const { file } = useContext(TextFileContext);
