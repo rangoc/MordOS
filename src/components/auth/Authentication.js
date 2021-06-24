@@ -1,17 +1,12 @@
 import React, { useContext } from 'react';
-
 // context
 import { AuthContext } from 'context/AuthProvider';
-
 // constants
 import { validCredentials } from 'constants/validCredentials';
-
 // assets
 import logo from 'assets/logo.svg';
-
 // sass
 import './authentication.scss';
-
 const Authentication = () => {
   const { formValues, setIsAuthenticated, handleChange } =
     useContext(AuthContext);

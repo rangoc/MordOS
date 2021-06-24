@@ -1,12 +1,54 @@
+$primary-color: rgb(255, 85, 1);
+
+.files-sort-options {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #6d6d6d;
+  user-select: none;
+  .sort-name,
+  .sort-date {
+    width: 90px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    &:hover {
+      color: #9c9c9c;
+    }
+    .arrows {
+      position: absolute;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      font-size: 30px;
+
+      .name.arrow-ascend,
+      .name.arrow-descend,
+      .date.arrow-ascend,
+      .date.arrow-descend {
+        color: $primary-color;
+      }
+    }
+  }
+  .sort-name {
+    margin-left: 40px;
+  }
+}
+
 .files-wrapper {
   width: 100%;
   overflow-y: auto;
   padding-bottom: 5rem;
-  p.empty-directory {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    text-align: center;
-    color: #6d6d6d;
-  }
+}
+
+p.empty-directory {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  color: #6d6d6d;
 }

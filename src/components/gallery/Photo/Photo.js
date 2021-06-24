@@ -1,5 +1,5 @@
 import React from 'react';
-
+// sass
 import './photo.scss';
 const Photo = ({ photo }) => {
   return (

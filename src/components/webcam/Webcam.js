@@ -5,7 +5,6 @@ import Window from 'components/Window';
 import { appType } from 'constants/appType';
 // assets
 import webcam from 'assets/webcam.svg';
-
 // sass
 import './webcam.scss';
 const Webcam = () => {

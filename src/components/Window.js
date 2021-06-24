@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 // context
 import { WindowContext } from 'context/WindowProvider';
-
 // assets
 import cancel from 'assets/cancel.svg';
-
 // sass
 import './window.scss';
 const Window = ({ icon, code, mode = null, children, customStyle = {} }) => {
