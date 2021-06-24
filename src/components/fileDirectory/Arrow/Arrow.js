@@ -1,6 +1,9 @@
 import React from 'react';
 // constants
 import { sortOrder } from 'constants/sortType';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 const Arrow = ({ order, sort, code = null }) => {
   return (
     <div className="arrows">
@@ -11,7 +14,7 @@ const Arrow = ({ order, sort, code = null }) => {
             : ''
         }`}
       >
-        &#129169;
+        <FontAwesomeIcon icon={faSortUp} size="xs" />
       </span>
       <span
         className={`${
@@ -20,7 +23,7 @@ const Arrow = ({ order, sort, code = null }) => {
             : ''
         }`}
       >
-        &#129171;
+        <FontAwesomeIcon icon={faSortDown} size="xs" />
       </span>
     </div>
   );
