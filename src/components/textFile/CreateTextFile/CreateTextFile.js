@@ -5,6 +5,7 @@ import { TextFileContext } from 'context/TextFileProvider';
 import Window from 'components/Window';
 import HintOverlay from '../HintOverlay/HintOverlay';
 import CreateModal from '../CreateModal/CreateModal';
+
 // constant
 import { appMode, appType } from 'constants/appType';
 // assets

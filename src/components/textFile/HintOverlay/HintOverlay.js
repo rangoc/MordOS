@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { TextFileContext } from 'context/TextFileProvider';
 // assets
 import fileDirectory from 'assets/fileDirectory.svg';
+
 // sass
 import './hintOverlay.scss';
 const HintOverlay = () => {

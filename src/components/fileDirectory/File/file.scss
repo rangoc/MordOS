@@ -4,7 +4,6 @@ $primary-color: rgb(255, 85, 1);
   align-items: center;
   justify-content: space-between;
   padding-left: 15px;
-  margin-bottom: 10px;
   transition: all ease-out 0.1s;
   cursor: pointer;
   &:hover {
@@ -19,23 +18,15 @@ $primary-color: rgb(255, 85, 1);
   .file-details {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 70%;
+    .file-icon-wrapper {
+      width: 25px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
     .file-name {
-      display: flex;
-      align-items: center;
-      .file-icon-wrapper {
-        width: 25px;
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-      .file-text {
-        margin-left: 10px;
-        width: 70px;
-        word-wrap: break-word;
-      }
+      margin-left: 10px;
     }
   }
   .file-options {

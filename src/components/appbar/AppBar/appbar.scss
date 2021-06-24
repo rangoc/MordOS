@@ -1,10 +1,11 @@
 @import '../../../includeMedia.scss';
+
 $breakpoints: (
   phone: 320px,
   customSize: 550px,
   tablet: 840px,
 );
-$primary-color: rgb(255, 85, 1);
+
 .appbar {
   width: 75px;
   min-height: 100vh;
@@ -24,7 +25,6 @@ $primary-color: rgb(255, 85, 1);
     min-height: 50px;
   }
   > div {
-    position: relative;
     margin-top: 20px;
     padding: 5px;
     cursor: pointer;
@@ -51,45 +51,6 @@ $primary-color: rgb(255, 85, 1);
       img {
         max-width: 100%;
         height: auto;
-      }
-    }
-    &::before,
-    &::after {
-      position: absolute;
-      top: 50%;
-      right: -0.625rem;
-      transform: translateX(100%) translateY(-50%) scale(0);
-      transition: transform ease-in 100ms;
-      transform-origin: left center;
-    }
-    &::before {
-      width: max-content;
-      text-align: center;
-      padding: 0.5rem;
-      font-size: 0.75rem;
-      max-width: 100%;
-      border-radius: 0.25rem;
-      background-color: $primary-color;
-      content: attr(data-tooltip);
-      @include media('>=phone', '<=tablet') {
-        content: none;
-      }
-    }
-    &::after {
-      content: '';
-      border: 5px solid transparent;
-      border-right-color: $primary-color;
-      right: -1px;
-      @include media('>=phone', '<=tablet') {
-        content: none;
-      }
-    }
-    &:hover {
-      &::before {
-        transform: translateX(100%) translateY(-50%) scale(1);
-      }
-      &::after {
-        transform: translateX(100%) translateY(-50%) scale(1);
       }
     }
   }
