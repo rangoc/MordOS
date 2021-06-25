@@ -213,6 +213,9 @@ and functions.
     
   - **Using my own media queries** - If we're talking about optimizations, this would be one of the areas where we could make improvements. The one file `includeMedia.scss` is responsible for a large amount of the project's sass percentage, but on the other hand makes media queries much easier and intuitive. However, for such tiny projects as this one, it may be an overkill, especially if optimization is an issue. So, if it became necessary, I would definitely utilize my own media queries.
 
+  - **Using an iframe as a solution for a dedicated web browser** -  iframes aren't really generous and they have their drawbacks, such as :
+    - Trying to embedded some sites, e.g. google, will result with `google.com refused to connnect` due to the  google's own configuration which refuses to display it in a frame because it set `X-Frame-Options` to `sameorigin`. 
+
 #### Most painful point of the project:
 
 The architecture was undoubtedly one of the aspects of the project that I had the most trouble with, and that required the most modifications and thought. At first, I was obsessed with creating the ideal, most reusable, most generic architecture in order to adhere to the DRY principle, but halfway through the project, I began to doubt my model owing to the unique requirements of each subsequent task. As a result of that unique requirement, the model had to be revised and slightly redesigned specifically to meet that requirement, casting doubt on the DRY principle and my architecture. And who knows, if this MVP continues to evolve, perhaps even more extensive remodeling will be required, thus coming up with the correct architecture design remains one of the most difficult challenges for me to solve. :grin: 
