@@ -3,16 +3,6 @@
 # Demo 
 [MordOS - One OS to rule them all](https://mordos.netlify.app/)
 
-# Screenshots 
-###### Desktop:  
-[![Desktop-Authentication1.png](https://i.postimg.cc/bwxpwTSC/Desktop-Authentication1.png)](https://postimg.cc/k2gkjWcK)
-[![TextFile.png](https://i.postimg.cc/xdgQK1RL/TextFile.png)](https://postimg.cc/PLL0Hh0q)
-[![File-Directory-Desktop.png](https://i.postimg.cc/bvq8DtQz/File-Directory-Desktop.png)](https://postimg.cc/w14nn3fP)
-[![Gallery.png](https://i.postimg.cc/RVnvj9Sz/Gallery.png)](https://postimg.cc/YhMcW5LX)
-[![Browser.png](https://i.postimg.cc/Wzdspc0g/Browser.png)](https://postimg.cc/n9fyT5Rh)
-###### Mobile
-[![Mobile.png](https://i.postimg.cc/8cxNjXb3/Mobile.png)](https://postimg.cc/PvbB749z)
-
 # How to run
 `git clone` the project locally  
 `yarn install` to install all the dependencies  
